@@ -1,0 +1,146 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+body{
+    background-color: #fff;
+}
+.sidebar-container{
+    display: flex;
+    position: relative;
+
+}
+.sidebar-container .sidebar{
+    background-color: #ccc;
+    position: fixed;
+    right: 20px;
+    width: 280px;
+    height: 95%;
+}
+.sidebar-container .sidebar h1{
+    color:black;
+    text-align: center;
+    margin-top: 10px;
+}
+.sidebar-container .sidebar ul li{
+    font-size: 28px;
+    padding: 10px;
+    border-bottom: 1px solid #fff;
+    float: right;
+}
+.sidebar-container .sidebar ul li i{
+    margin-left: 30px;
+    color:black;
+}
+.sidebar-container .sidebar ul li a{
+    display: block;
+    color:cornflowerblue;
+    padding: 10px;
+
+}
+.sidebar-container .sidebar ul li a:hover{
+    background-color:rgb(161,159,163) ;
+    color:black;
+}
+.sidebar-container .content-sec{
+    width: 70%;
+    margin-left: 40px;
+    padding: 20px;
+}
+.sidebar-container .content-sec label{
+    display: block;
+    margin-bottom: 5px;
+    font-size: 40px;
+    margin-right: 40px;
+    text-align: right;
+}
+.sidebar-container .content-sec input{
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+}
+.sidebar-container .content-sec .add{
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 15px  30px;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.sidebar-container .content-sec .add:hover{
+    background-color: #0056b3;
+}
+.sidebar-container table{
+    background-color: #fff;
+    width: 100%;
+    border-collapse: collapse;
+}
+.sidebar-container table th,td{
+    font-size: 22px;
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+.sidebar-container table th{
+    background-color: #f0f0f0;
+}
+.sidebar-container table .delet{
+    color: white;
+    font-size: 18px;
+    background-color:#007bff ;
+    padding: 8px 18px;
+    border-radius: 2px;
+    border: 1px solid black;
+    margin-right: 5px;
+}
+.sidebar-container table .delet:hover{
+    background-color:red;
+    color: white;
+}
+.sidebar-container table img{
+    width: 50px;
+    height: 50px;
+}
+/* start product css */
+.form_product{
+    width: 70%;
+    margin: 5px;
+    box-shadow: 0 5px 10px rgba(0,0,0, 1);
+}
+h1{
+    padding: 10px;
+}
+
+label{
+    display: block;
+    margin-bottom: 5px;
+    font-size: 25px;
+}
+
+input{
+    width:80%;
+    padding: 12px;
+    margin-bottom:10px ;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+button{
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #007bff;
+    border: none;
+    cursor: pointer;
+    font-size:28px ;
+}
+button:hover{
+    background-color :#011c38;
+    color: white;
+}
+/* end product css */
