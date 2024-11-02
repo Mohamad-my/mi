@@ -1,17 +1,4 @@
-<?php
-session_start();
 
-$host="localhost:3307";
-$username="root";
-$password="";
-$dbname="task";
-
-$conn=mysqli_connect($host, $username, $password, $dbname);
-
-if(!$conn) {
-    echo "لم يتم الاتصال بقاعدة البيانات";
-}
-?>
 
 <!DOCTYPE html>
 <html lang="en">

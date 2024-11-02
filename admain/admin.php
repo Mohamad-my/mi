@@ -5,7 +5,7 @@ session_start();
 // إعدادات Supabase
 $supabase_url = "https://nlszbtvnyniqdokpubbq.supabase.co"; 
 $supabase_key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5sc3pidHZueW5pcWRva3B1YmJxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzAyMjM5NDYsImV4cCI6MjA0NTc5OTk0Nn0.nXmb3WE-cEZqTrqGANth0yI363S2_s_T812roEKTc4I"; 
-$supabaseAuthUrl = $supabase_url . '/auth/v1/token';
+$supabaseAuthUrl = $supabase_url . '/auth/v1/token?grant_type=password';
 
 $ADemail = isset($_POST['email']) ? trim($_POST['email']) : '';
 $ADpassword = isset($_POST['password']) ? trim($_POST['password']) : '';
@@ -37,7 +37,6 @@ if (isset($ADadd)) {
         if (curl_errno($ch)) {
             echo '<p class="alert">حدث خطأ أثناء الاتصال بـ Supabase: ' . curl_error($ch) . '</p>';
         } else {
-            // طباعة الاستجابة كاملة للتأكد من تفاصيلها
             echo '<pre>HTTP Code: ' . $httpCode . "\n";
             echo 'Response: ' . $response . '</pre>';
 
@@ -60,6 +59,9 @@ if (isset($ADadd)) {
 
 ob_end_flush();
 ?>
+
+
+
 <!DOCTYPE html>
 <html lang="ar">
 <head>
@@ -167,13 +169,29 @@ ob_end_flush();
     </style>
 </head>
 <body>
+<script>
+import { createClient } from '@supabase/supabase-js'
+const supabaseUrl = 'https://nlszbtvnyniqdokpubbq.supabase.co'
+const supabaseKey = process.env.SUPABASE_KEY
+const supabase = createClient(supabaseUrl, supabaseKey)
+
+const signUp=async() =>{
+    let { data, error } = await supabase.auth.signUp({
+  email: $ADemail,
+  password: $ADpassword
+})
+}
+
+
+
+</script>
     <main>
         <div class="container">
             <h1>تسجيل الدخول</h1>
             <h3>هذه الصفحة مخصصة للإداري فقط</h3>
             <form action="admin.php" method="post">
                 <label for="em">البريد الالكتروني</label>
-                <input type="email" name="email" id="em" placeholder="أدخل بريدك الإلكتروني" required>
+                <input type="email" name="email" id="signUp" placeholder="أدخل بريدك الإلكتروني" required>
                 <br>
                 <label for="pass">الرقم السري</label>
                 <input type="password" name="password" id="pass" placeholder="أدخل كلمة السر" required>
